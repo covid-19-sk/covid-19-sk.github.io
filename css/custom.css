@@ -56,7 +56,9 @@ h1{
 #top h4{
   font-size: 2rem;
 }
-
+h3{
+	margin-top: 1.5rem;
+}
 
 .loader {
     position: fixed;
