@@ -40,6 +40,7 @@
     </nav>
 
     <h1 id="page-top" class="text-center mt-4">Actual Covid-19 data in Slovak republic</h1>
+    <hr>
     <div class="row" id="top">
       <div class="col-lg-3 mt-4">
         <div class="card">
@@ -81,7 +82,11 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mt-4" id="page-reg">
+    </div>
+    <h3 class="text-center" id="page-reg">Regions</h3>
+    <hr>
+    <div class="row">
+      <div class="col-md-6 mt-4">
         <div class="card mb-2">
           <div class="card-margin">
             <h5>Banskobystrický kraj</h5>
@@ -162,6 +167,8 @@
         </div>
       </div>
     </div>
+    <h3 class="text-center" id="page-dist">Districts</h3>
+    <hr>
 
     <script type="text/javascript">
       let districts = new Array();
@@ -184,7 +191,7 @@
         }
       });
 
-      document.write("<div class='mt-5' id='page-dist'>");
+      document.write("<div>");
       document.write("<table>")
       document.write("<tr><td>City</td><td class=\"text-center p-3\">Total</td><td class=\"text-center\">Today</td></tr>");
       for (var i = 0; i < 72; i++) {
@@ -194,7 +201,7 @@
       document.write("</div>");
       setTimeout(function() {
         $(".loader").hide();
-      }, 1500);
+      }, 2500);
     </script>
 
     <!-- Footer -->
