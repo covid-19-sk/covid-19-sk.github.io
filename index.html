@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="sk">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="ico.png" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Covid-19 SK</title>
+</head>
+
+<body id="page-top">
+  <div class="loader"></div>
+  <div class="container" id="navbar">
+    <nav class="navbar navbar-expand-sm fixed-top navbar-light">
+      <a class="text-black js-scroll-trigger" href="#page-top">Covid-19 SK</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#page-top">Overall</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#page-reg">Regions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#page-dist">Districts</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1 id="page-top" class="text-center mt-4">Actual Covid-19 data in Slovak republic</h1>
+    <div class="row" id="top">
+      <div class="col-lg-3 mt-4">
+        <div class="card">
+          <div class="card-margin">
+            <h6>Positive PCR</h6>
+            <hr>
+            <h4 id="infected"></h4>
+            <p class="mb-0" id="newInfectedPCR"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 mt-4">
+        <div class="card">
+          <div class="card-margin">
+            <h6>Recovered</h6>
+            <hr>
+            <h4 id="recovered"></h4>
+            <p class="mb-0 " id="newRecovered"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 mt-4">
+        <div class="card">
+          <div class="card-margin">
+            <h6>Deaths</h6>
+            <hr>
+            <h4 id="deaths"></h4>
+            <p class="mb-0" id="newDeceased"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 mt-4">
+        <div class="card">
+          <div class="card-margin">
+            <h6>Date</h6>
+            <hr>
+            <h4 id="date"></h4>
+            <p class="mb-0" id="year"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4" id="page-reg">
+        <div class="card mb-2">
+          <div class="card-margin">
+            <h5>Banskobystrický kraj</h5>
+            <hr>
+            <h4 id="BB"></h4>
+            <p class="mb-0" id="BB1"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4">
+        <div class="card mb-2 ">
+          <div class="card-margin">
+            <h5>Bratislavský kraj</h5>
+            <hr>
+            <h4 id="BA"></h4>
+            <p class="mb-0" id="BA1"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4">
+        <div class="card mb-2 ">
+          <div class="card-margin">
+            <h5>Košický kraj</h5>
+            <hr>
+            <h4 id="KE"></h4>
+            <p class="mb-0" id="KE1"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4">
+        <div class="card mb-2 ">
+          <div class="card-margin">
+            <h5>Nitriansky kraj</h5>
+            <hr>
+            <h4 id="NR"></h4>
+            <p class="mb-0" id="NR1"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4">
+        <div class="card mb-2 ">
+          <div class="card-margin">
+            <h5>Prešovský kraj</h5>
+            <hr>
+            <h4 id="PP"></h4>
+            <p class="mb-0" id="PP1"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4">
+        <div class="card mb-2 ">
+          <div class="card-margin">
+            <h5>Trenčiansky kraj</h5>
+            <hr>
+            <h4 id="TN"></h4>
+            <p class="mb-0" id="TN1"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4">
+        <div class="card mb-2 ">
+          <div class="card-margin">
+            <h5>Trnavský kraj</h5>
+            <hr>
+            <h4 id="TT"></h4>
+            <p class="mb-0" id="TT1"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4">
+        <div class="card mb-2 ">
+          <div class="card-margin">
+            <h5>Žilinský kraj</h5>
+            <hr>
+            <h4 id="ZA"></h4>
+            <p class="mb-0" id="ZA1"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      let districts = new Array();
+      let distNewInf = new Array();
+      let distTotalInf = new Array();
+      $.ajax({
+        url: 'https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/LATEST?disableRedirect=true',
+        async: false,
+        dataType: 'json',
+        success: function(json) {
+          for (i = 0; i < 72; i++) {
+            let town = (json.districts[i].town);
+            let newInf = (json.districts[i].newInfected);
+            let totalInf = (json.districts[i].totalInfected);
+            districts.push(town);
+            distNewInf.push(newInf);
+            distTotalInf.push(totalInf);
+          }
+
+        }
+      });
+
+      document.write("<div class='mt-5' id='page-dist'>");
+      document.write("<table>")
+      document.write("<tr><td>City</td><td class=\"text-center p-3\">Total</td><td class=\"text-center\">Today</td></tr>");
+      for (var i = 0; i < 72; i++) {
+        document.write("<tr><td>" + districts[i] + "</td><td class=\"text-center\">" + distTotalInf[i] + "</td><td class=\"text-center\">+ " + distNewInf[i] + "</td></tr>");
+      }
+      document.write("</table>")
+      document.write("</div>");
+      setTimeout(function() {
+        $(".loader").hide();
+      }, 1500);
+    </script>
+
+    <!-- Footer -->
+    <hr class="new1 mt-4">
+    <footer class="page-footer font-small blue mt-2">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-10 mt-md-0 mt-3">
+            <h5 class="text-uppercase">Info</h5>
+            <p>The data is updated every day around 10 AM</p>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-2 mb-md-0 mb-3 text-md-right">
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a target="_blank" href="https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/LATEST?disableRedirect=true">Api</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://github.com/majko96/covid-19-sk">Android app</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright mmm
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+  <div class="scroll-to-top position-fixed">
+    <a class="js-scroll-trigger d-block text-center rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+  </div>
+
+  <!--my custom JS-->
+  <script src="js/main.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
