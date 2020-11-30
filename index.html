@@ -39,7 +39,7 @@
       </div>
     </nav>
 
-    <h1 id="page-top" class="text-center mt-4">Actual Covid-19 data in Slovak republic</h1>
+    <h1 id="page-top" class="text-center mt-4">Today Covid-19 data in Slovak republic</h1>
     <hr>
     <div class="row" id="top">
       <div class="col-lg-3 mt-4">
@@ -86,7 +86,7 @@
     <h3 class="text-center" id="page-reg">Regions</h3>
     <hr>
     <div class="row">
-      <div class="col-md-6 mt-4">
+      <div class="col-lg-3 mt-4">
         <div class="card mb-2">
           <div class="card-margin">
             <h5>Banskobystrický kraj</h5>
@@ -96,7 +96,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mt-4">
+      <div class="col-lg-3 mt-4">
         <div class="card mb-2 ">
           <div class="card-margin">
             <h5>Bratislavský kraj</h5>
@@ -106,7 +106,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mt-4">
+      <div class="col-lg-3 mt-4">
         <div class="card mb-2 ">
           <div class="card-margin">
             <h5>Košický kraj</h5>
@@ -116,7 +116,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mt-4">
+      <div class="col-lg-3 mt-4">
         <div class="card mb-2 ">
           <div class="card-margin">
             <h5>Nitriansky kraj</h5>
@@ -126,7 +126,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mt-4">
+      <div class="col-lg-3 mt-4">
         <div class="card mb-2 ">
           <div class="card-margin">
             <h5>Prešovský kraj</h5>
@@ -136,7 +136,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mt-4">
+      <div class="col-lg-3 mt-4">
         <div class="card mb-2 ">
           <div class="card-margin">
             <h5>Trenčiansky kraj</h5>
@@ -146,7 +146,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mt-4">
+      <div class="col-lg-3 mt-4">
         <div class="card mb-2 ">
           <div class="card-margin">
             <h5>Trnavský kraj</h5>
@@ -156,7 +156,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mt-4">
+      <div class="col-lg-3 mt-4">
         <div class="card mb-2 ">
           <div class="card-margin">
             <h5>Žilinský kraj</h5>
@@ -179,7 +179,8 @@
         async: false,
         dataType: 'json',
         success: function(json) {
-          for (i = 0; i < 72; i++) {
+          let distLen = (json.districts).length;
+          for (i = 0; i < distLen; i++) {
             let town = (json.districts[i].town);
             let newInf = (json.districts[i].newInfected);
             let totalInf = (json.districts[i].totalInfected);
@@ -211,7 +212,7 @@
         <div class="row">
           <div class="col-md-10 mt-md-0 mt-3">
             <h5 class="text-uppercase">Info</h5>
-            <p>Data are updated every day around 10:00 AM</p>
+            <p>The data is updated every day around 10 AM</p>
           </div>
           <hr class="clearfix w-100 d-md-none pb-3">
           <div class="col-md-2 mb-md-0 mb-3 text-md-right">
