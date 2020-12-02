@@ -169,37 +169,43 @@
     </div>
     <h3 class="text-center" id="page-dist">Districts</h3>
     <hr>
+    <div id="outputDiv"></div>
 
     <script type="text/javascript">
-      let districts = new Array();
-      let distNewInf = new Array();
-      let distTotalInf = new Array();
-      $.ajax({
-        url: 'https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/LATEST?disableRedirect=true',
-        async: false,
-        dataType: 'json',
-        success: function(json) {
-          let distLen = (json.districts).length;
-          for (i = 0; i < distLen; i++) {
-            let town = (json.districts[i].town);
-            let newInf = (json.districts[i].newInfected);
-            let totalInf = (json.districts[i].totalInfected);
-            districts.push(town);
-            distNewInf.push(newInf);
-            distTotalInf.push(totalInf);
-          }
-
-        }
-      });
-
-      document.write("<div>");
-      document.write("<table>")
-      document.write("<tr><td>City</td><td class=\"text-center p-3\">Total</td><td class=\"text-center\">Today</td></tr>");
-      for (var i = 0; i < 72; i++) {
-        document.write("<tr><td>" + districts[i] + "</td><td class=\"text-center\">" + distTotalInf[i] + "</td><td class=\"text-center\">+ " + distNewInf[i] + "</td></tr>");
+      function getData() {
+        $.ajax({
+          url: 'https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/LATEST?disableRedirect=true',
+          dataType: 'json',
+          success: handleData
+        });
       }
-      document.write("</table>")
-      document.write("</div>");
+
+      function handleData(data) {
+        let districts = new Array();
+        let distNewInf = new Array();
+        let distTotalInf = new Array();
+        let distLen = (data.districts).length;
+        for (i = 0; i < distLen; i++) {
+          let town = (data.districts[i].town);
+          let newInf = (data.districts[i].newInfected);
+          let totalInf = (data.districts[i].totalInfected);
+          districts.push(town);
+          distNewInf.push(newInf);
+          distTotalInf.push(totalInf);
+        }
+
+        document.getElementById("outputDiv").innerHTML = "";
+        var newTable = "<table>";
+        newTable += "<tr><td>" + "Town" + "</td><td class=\"text-center p-3\">" + "Total" + "</td><td class=\"text-center\">" + "Today" + "<td></tr>";
+        for (j = 0; j < 72; j++) {
+          newTable += "<tr><td>" + districts[j] + "</td><td class=\"text-center\">" + distTotalInf[j] + "</td><td class=\"text-center\">+ " + distNewInf[j] + "<td></tr>";
+        }
+        newTable += "</table>";
+        document.getElementById("outputDiv").innerHTML = newTable;
+      }
+
+      getData();
+
       setTimeout(function() {
         $(".loader").hide();
       }, 2500);
