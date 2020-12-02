@@ -196,7 +196,7 @@
 
         document.getElementById("outputDiv").innerHTML = "";
         var newTable = "<table>";
-        newTable += "<tr><td>" + "Town" + "</td><td class=\"text-center p-3\">" + "Total" + "</td><td width=\"5%\" class=\"text-center\">" + "Today" + "<td></tr>";
+        newTable += "<tr><td>" + "Town" + "</td><td width=\"10%\" class=\"text-center p-3\">" + "Total" + "</td><td width=\"5%\" class=\"text-center\">" + "Today" + "<td></tr>";
         for (j = 0; j < 72; j++) {
           newTable += "<tr><td>" + districts[j] + "</td><td class=\"text-center\">" + distTotalInf[j] + "</td><td class=\"text-center\">+ " + distNewInf[j] + "<td></tr>";
         }
