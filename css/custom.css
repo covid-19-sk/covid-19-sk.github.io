@@ -79,15 +79,13 @@ h5{
 
 table {
   width: 100%;
-	border-collapse: collapse;
 }
 tr {
 border-bottom: 1px solid #6b9fff;
 }
 td{
-	padding:5px 0px 5px 0px;
+	padding-top: 10px;
 }
-
 
 	hr {
 	  margin-top: 0rem;
