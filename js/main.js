@@ -36,6 +36,7 @@ $.getJSON('https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/L
   let newInfectedTodayTotal_locale = newInfectedTodayTotal.toLocaleString("sk-SK");
   let newTestedPCR = new Number(`${data.newTestedPCR}`).toLocaleString("sk-SK");
   let date = (`${data.lastUpdatedAtSource}`);
+  date = moment(date).format('DD. MM.YYYY');
   let year = date.slice(date.length - 4);
   let newdate = date.substring(0, date.length - 4);
 
