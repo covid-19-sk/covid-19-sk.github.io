@@ -237,7 +237,7 @@
         </div>
       </div>
       <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2020 Copyright mmm
+      <div class="footer-copyright text-center py-3">© 2020 - <span id="footerYear"></span> Copyright <a href="https://majko96.github.io">MBa</a>
       </div>
       <!-- Copyright -->
     </footer>
@@ -248,6 +248,12 @@
   <div class="scroll-to-top position-fixed">
     <a class="js-scroll-trigger d-block text-center rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
   </div>
+
+  <script type="text/javascript">
+    (function() {
+      document.getElementById("footerYear").innerHTML = new Date().getFullYear();
+    })();
+  </script>
 
   <!--my custom JS-->
   <script src="js/main.js"></script>
