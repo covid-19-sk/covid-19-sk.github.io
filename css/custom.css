@@ -136,12 +136,12 @@ li a {
 
 #navbar a:hover {
   text-decoration: none;
-  color: #6b9fff;
+  color: #FF0000;
 }
 
 #navbar li:hover {
   cursor: pointer;
-  color: #6b9fff;
+  color: #FF0000;
 }
 
 .navbar-toggler-icon {
@@ -156,11 +156,12 @@ li a {
   text-align: center;
 }
 
-.footer-copyright a {
+footer a:hover {
+  text-align: center;
+  color: #FF0000 !important;
   text-decoration: none;
 }
 
-.footer-copyright a:hover {
+footer a {
   text-decoration: none;
-  color: #FF0000 !important;
 }
