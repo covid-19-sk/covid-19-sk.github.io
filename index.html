@@ -85,6 +85,26 @@
           </div>
         </div>
       </div>
+      <div class="col-lg-6 mt-4">
+        <div class="card">
+          <div class="card-margin">
+            <h6>Vacinated first dose</h6>
+            <hr>
+            <h4 id="vfd"></h4>
+            <p class="mb-0" id="vfdT"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <div class="card">
+          <div class="card-margin">
+            <h6>Vacinated second dose</h6>
+            <hr>
+            <h4 id="vsd"></h4>
+            <p class="mb-0" id="vsdT"></p>
+          </div>
+        </div>
+      </div>
     </div>
     <h3 class="text-center" id="page-reg">Regions</h3>
     <hr>
@@ -193,7 +213,11 @@
           let newInf = (data.districts[i].newInfected);
           let totalInf = (data.districts[i].totalInfected);
           districts.push(town);
-          distNewInf.push(newInf);
+          if (newInf === 0) {
+            distNewInf.push("");
+          } else {
+            distNewInf.push("+ " + newInf);
+          }
           distTotalInf.push(totalInf);
         }
 
@@ -201,7 +225,7 @@
         var newTable = "<table>";
         newTable += "<tr><td class=\"pb-3 pt-3\">" + "Town" + "</td><td width=\"10%\" class=\"text-center p-3\">" + "Total" + "</td><td width=\"5%\" class=\"text-center pb-3 pt-3\">" + "Today" + "<td></tr>";
         for (j = 0; j < 72; j++) {
-          newTable += "<tr><td>" + districts[j] + "</td><td class=\"text-center\">" + distTotalInf[j] + "</td><td class=\"text-center\">+ " + distNewInf[j] + "<td></tr>";
+          newTable += "<tr><td>" + districts[j] + "</td><td class=\"text-center\">" + distTotalInf[j] + "</td><td class=\"text-center\">" + distNewInf[j] + "<td></tr>";
         }
         newTable += "</table>";
         document.getElementById("outputDiv").innerHTML = newTable;

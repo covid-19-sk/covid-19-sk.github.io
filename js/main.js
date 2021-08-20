@@ -35,6 +35,10 @@ $.getJSON('https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/L
   let newInfectedTodayTotal = new Number(`${data.newInfectedPCR}`) + new Number(`${data.newInfectedAG}`);
   let newInfectedTodayTotal_locale = newInfectedTodayTotal.toLocaleString("sk-SK");
   let newTestedPCR = new Number(`${data.newTestedPCR}`).toLocaleString("sk-SK");
+  let vacinatedFirstDose = new Number(`${data.vacinatedFirstDose}`).toLocaleString("sk-SK");
+  let vacinatedSecondDose = new Number(`${data.vacinatedSecondDose}`).toLocaleString("sk-SK");
+  let vacinatedFirstDoseT = new Number(`${data.newVacinatedFirstDose}`).toLocaleString("sk-SK");
+  let vacinatedSecondDoseT = new Number(`${data.newVacinatedSecondDose}`).toLocaleString("sk-SK");
   let date = (`${data.lastUpdatedAtSource}`);
   date = moment(date).format('DD. MM.YYYY');
   let year = date.slice(date.length - 4);
@@ -53,6 +57,10 @@ $.getJSON('https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/L
   $("#deaths").html(deaths_locale);
   $("#recovered").html(recovered_locale);
   $("#testedPCR").html(testedPCR);
+  $("#vfd").html(vacinatedFirstDose);
+  $("#vsd").html(vacinatedSecondDose);
+  $("#vfdT").html('<i class="fas fa-arrow-up green-color"></i> ' + vacinatedFirstDoseT);
+  $("#vsdT").html('<i class="fas fa-arrow-up green-color"></i> ' + vacinatedSecondDoseT);
   $("#newInfectedPCR").html('<i class="fas fa-arrow-up red-color"></i> ' + newInfectedPCR_locale);
   $("#newDeceased").html('<i class="fas fa-arrow-up red-color"></i> ' + newDeceased_locale);
   $("#newRecovered").html('<i class="fas fa-arrow-up red-color"></i> ' + newRecovered_locale);
