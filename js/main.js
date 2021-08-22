@@ -57,6 +57,11 @@ $.getJSON('https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/L
   let tt_locale = new Number(`${data.regionsData[6].totalInfected}`).toLocaleString("sk-SK");
   let za_locale = new Number(`${data.regionsData[7].totalInfected}`).toLocaleString("sk-SK");
 
+  if (data.newDeceased >= 1) {
+    $("#newDeceased").html('<i class="fas fa-arrow-up red-color"></i> ' + newDeceased_locale);
+  } else {
+    $("#newDeceased").html(newDeceased_locale);
+  }
   $("#infected").html(infected_locale);
   $("#deaths").html(deaths_locale);
   $("#recovered").html(recovered_locale);
@@ -68,7 +73,6 @@ $.getJSON('https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/L
   $("#vfdT").html('<i class="fas fa-arrow-up green-color"></i> ' + vacinatedFirstDoseT);
   $("#vsdT").html('<i class="fas fa-arrow-up green-color"></i> ' + vacinatedSecondDoseT);
   $("#newInfectedPCR").html('<i class="fas fa-arrow-up red-color"></i> ' + newInfectedPCR_locale);
-  $("#newDeceased").html('<i class="fas fa-arrow-up red-color"></i> ' + newDeceased_locale);
   $("#newRecovered").html('<i class="fas fa-arrow-up red-color"></i> ' + newRecovered_locale);
   $("#newTestedPCR").html('<i class="fas fa-arrow-up green-color2"></i> ' + newTestedPCR);
   $("#date").html(newdate);
