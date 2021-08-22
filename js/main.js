@@ -43,6 +43,10 @@ $.getJSON('https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/L
   date = moment(date).format('DD. MM.YYYY');
   let year = date.slice(date.length - 4);
   let newdate = date.substring(0, date.length - 4);
+  const populationSK = 5427917;
+  let percentageVacinatedFD = (data.vacinatedFirstDose) / (populationSK / 100);
+  let percentageVacinatedSD = (data.vacinatedSecondDose) / (populationSK / 100);
+
 
   let bb_locale = new Number(`${data.regionsData[0].totalInfected}`).toLocaleString("sk-SK");
   let ba_locale = new Number(`${data.regionsData[1].totalInfected}`).toLocaleString("sk-SK");
@@ -58,7 +62,9 @@ $.getJSON('https://api.apify.com/v2/key-value-stores/GlTLAdXAuOz6bLAIO/records/L
   $("#recovered").html(recovered_locale);
   $("#testedPCR").html(testedPCR);
   $("#vfd").html(vacinatedFirstDose);
+  $("#vfdp").html(new Number(percentageVacinatedFD.toFixed(2)).toLocaleString("sk-SK") + "%");
   $("#vsd").html(vacinatedSecondDose);
+  $("#vsdp").html(new Number(percentageVacinatedSD.toFixed(2)).toLocaleString("sk-SK") + "%");
   $("#vfdT").html('<i class="fas fa-arrow-up green-color"></i> ' + vacinatedFirstDoseT);
   $("#vsdT").html('<i class="fas fa-arrow-up green-color"></i> ' + vacinatedSecondDoseT);
   $("#newInfectedPCR").html('<i class="fas fa-arrow-up red-color"></i> ' + newInfectedPCR_locale);
